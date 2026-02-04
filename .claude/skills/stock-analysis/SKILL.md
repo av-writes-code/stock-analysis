@@ -10,7 +10,7 @@ allowed-tools:
   - Read
   - Task
 metadata:
-  version: "1.0"
+  version: "2.0"
   author: "av-writes-code"
   first-applied: "Bikaji Foods International, Feb 3 2026"
 ---
@@ -35,6 +35,16 @@ metadata:
 5. **Show your math.** Valuation section must show EPS derivation, P/E assumptions (anchored to peer comps), and probability weights with rationale.
 6. **Font for PDF:** Use SFNS (`/System/Library/Fonts/SFNS.ttf`) for proper INR symbol rendering on macOS.
 7. **Correction culture:** If later data contradicts an earlier claim in the report, explicitly note the correction rather than silently changing it.
+8. **Executive summary on page 1.** Every report must have a verdict box (Rating, Expected Value, Key Bull/Bear) on the title page after the metrics table.
+9. **Shares outstanding from primary source.** Never derive shares as Market Cap / Price. Use BSE filings, Screener.in equity capital / face value, or annual report. Cite the source.
+10. **Price chart transparency.** All approximated price charts must have a visible "Approximated monthly data; MAs are illustrative" disclaimer IN THE PDF (not just in code comments).
+11. **Cash flow is mandatory.** CFO trend (3-5 years), FCF (CFO - Capex), and Cash Conversion Ratio (CFO/PAT) must appear in every report. For banks: substitute Credit Cost Ratio, PCR, Slippage Ratio.
+12. **Bear case stress test.** Bear P/E must go to sector average or below. Bear probability >= 30% for stocks with declining profits, negative cash flow, institutional selling, or credit downgrades. Must model negative growth, not just slower growth.
+13. **Verdict must match EV.** If probability-weighted Expected Value < CMP, verdict MUST be HOLD or AVOID, not BUY. No exceptions.
+14. **No fabricated charts.** If individual data is not disclosed (e.g., brand-level revenue), use only reported segment data. Any estimated chart must have prominent "ILLUSTRATIVE ONLY" label.
+15. **Analyst targets must be dated.** Flag any target older than 3 months. Flag any target that predates the latest quarterly results.
+16. **Data triangulation.** Every key metric (revenue, PAT, EPS, P/E, shares) must be cross-checked across 2+ sources. If sources disagree, note both values. If unverifiable, label "ESTIMATED".
+17. **No approximation as fact.** Never present estimated data as fact. Use qualifiers: "approximately", "estimated", "illustrative". For price charts, use yfinance if available.
 
 ---
 
@@ -106,8 +116,9 @@ URL: https://www.screener.in/company/{SYMBOL}/
 
 ### Step 1: Establish Current EPS
 ```
-TTM Net Profit (from Screener.in) / Shares Outstanding (Market Cap / Price)
+TTM Net Profit (from Screener.in) / Shares Outstanding (from Screener.in equity capital / face value)
 Sanity check: Price / EPS should match reported P/E within 5%
+NEVER derive shares as Market Cap / Price (circular).
 ```
 
 ### Step 2: Project FY+2 EPS (3 Scenarios)
@@ -185,8 +196,42 @@ Always include:
 - [ ] Disclaimer included
 - [ ] Currency symbols render correctly (₹ via SFNS font)
 - [ ] PDF opens cleanly, all charts render
+- [ ] Executive summary box on page 1 with Rating + EV + Key Bull/Bear
+- [ ] Shares outstanding from primary source (not Market Cap / Price)
+- [ ] Price chart has visible "approximated" disclaimer in the PDF
+- [ ] Cash flow table: CFO, Capex, FCF, Cash Conversion (3+ years)
+- [ ] Bear case P/E at or below sector average
+- [ ] Bear probability >= 30% if fundamentals deteriorating
+- [ ] Verdict consistent with probability-weighted EV (EV < CMP = HOLD/AVOID)
+- [ ] All estimated/approximated charts labeled as such
+- [ ] Analyst targets flagged if > 3 months old
+- [ ] Key metrics triangulated across 2+ sources
 
 ---
+
+## Banking-Specific Rules
+When analyzing a bank:
+- Use P/B (not P/E) as primary valuation metric
+- Include Gordon Growth Model: Justified P/B = (ROE - g) / (CoE - g)
+- Required metrics: NIM, GNPA/NNPA, CASA, Cost-to-Income, ROA, ROE, CAR (CET1 breakdown)
+- Credit quality section: Credit Cost Ratio trend, PCR, Slippage Ratio, Restructured Book
+- Dilution analysis: Show EPS bridge if significant share issuance occurred
+
+## Loss-Making Company Rules
+When analyzing a loss-making company:
+- Use EV/Sales (not P/S) as primary if significant debt/leases
+- Show EV derivation: Market Cap + Net Debt (including lease liabilities if material)
+- Cash burn waterfall: Operating outflow, Capex, Lease payments, Net burn, Runway
+- Path to profitability timeline with specific milestones
+- Bear probability minimum 35%
+
+## Subagent Usage
+When spawning subagents via Task tool for report generation:
+- Subagents CANNOT invoke the Skill tool — it is main-thread only
+- Embed full methodology by instructing agents to READ this SKILL.md file as Step 1
+- Also instruct agents to READ the benchmark template script (Bikaji) as structural reference
+- Agents often get auto-denied on Bash — the parent thread should run Python scripts
+- Keep agent prompts lean — give each agent only its stock's data, not the full conversation
 
 ## Known Gaps (Future Improvements)
 
