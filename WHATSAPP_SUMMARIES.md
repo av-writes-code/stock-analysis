@@ -1,9 +1,30 @@
 # Stock Research Summaries — February 4, 2026
 ## WhatsApp-Ready Green/Red Flag Format
 
+**Key assumptions noted where applicable. Full reports have detailed methodology & limitations sections.**
+
 ---
 
-### 1. SULA VINEYARDS (Rs 185) — AVOID
+### 1. BIKAJI FOODS (Rs 660) — ACCUMULATE
+
+GREEN FLAGS:
++ Q3 FY26 revenue Rs 830 Cr (+17% YoY, Screener.in)
++ EBITDA margin expanding +430 bps YoY
++ ROCE 18.2% (Screener.in), strong brand in packaged snacks
++ Rural recovery + FMCG channel penetration thesis
++ CFO growing: Rs 57 Cr (FY22) -> Rs 193 Cr (FY25)
+
+RED FLAGS:
+- P/E 65.9x — premium valuation (Screener.in)
+- Cash conversion ratio declined: 65% (FY24) -> 45% (FY25)
+- Competitive intensity from ITC, Haldiram's
+- Input cost inflation risk (edible oils, palm oil)
+
+VERDICT: ACCUMULATE. Expected value Rs 756 (~14.5% upside). *Assumption: Forward EPS uses base case 18% PAT growth, P/E 55-65x anchored to FMCG peer average.*
+
+---
+
+### 2. SULA VINEYARDS (Rs 185) — HOLD
 
 GREEN FLAGS:
 + India's largest wine producer (>50% market share)
@@ -13,100 +34,101 @@ GREEN FLAGS:
 
 RED FLAGS:
 - Q1 FY26 PAT crashed 87% to Rs 1.94 Cr
-- Revenue flat (5Y CAGR only 3.6%)
-- Cash flow from operations HALVED in FY25
-- Debtor days rising: 113 -> 148 days
-- Stock down 48% from IPO price
-- Operating income 3Y CAGR is NEGATIVE (-11%)
+- Revenue CAGR 3.6% vs wine market 14-16% = market share erosion
+- CFO halved: Rs 121 Cr (FY24) -> Rs 58 Cr (FY25) (Screener.in)
+- Debtor days surged: 81 (FY23) -> 148 (FY25) (Screener.in)
+- Inventory days 877 — significant working capital stress
+- ROCE: 13.2% (Screener.in), declining
 
-VERDICT: AVOID. Expected value Rs 167 (-10% downside). Wait for Rs 130-140 entry.
+VERDICT: HOLD. Expected value Rs 261 (~41% upside, but high uncertainty). *Assumption: Bear probability raised to 40% due to working capital deterioration. Bull case depends on wine market structural growth thesis.*
 
 ---
 
-### 2. ABFRL (Rs 67) — HIGH-RISK TURNAROUND BET
+### 3. ABFRL (Rs 67) — SPECULATIVE HOLD
 
 GREEN FLAGS:
 + Ethnic brands growing 25-34% (Sabyasachi, Tasva)
 + Rs 2,350 Cr cash — funded for growth
-+ EBITDA grew 64% YoY in FY25
++ CFO positive and growing despite losses: Rs 1,644 Cr FY25 (Screener.in)
 + OWND/Gen Z brand: 59 stores, +43% growth
-+ Below analyst targets (Rs 80-105)
 
 RED FLAGS:
-- Still loss-making: Rs -263 Cr net loss in Q2
-- Rs 7,000-8,000 Cr debt post-demerger
+- Still loss-making: Rs -263 Cr net loss in Q2 FY26
+- ROCE: -2.87% (Screener.in)
+- Rs 3,500+ Cr debt post-demerger (lease liabilities)
 - Pantaloons core growing only 6%
-- Massive equity dilution (114 Cr shares)
-- Nuvama downgraded to Hold
+- TTM revenue not directly comparable (pre vs post demerger)
 
-VERDICT: Turnaround bet. Range Rs 55-90. Only for aggressive investors.
+VERDICT: SPECULATIVE HOLD. Expected value around CMP. *Assumption: Uses EV/Sales (not P/E) since loss-making. CFO is positive due to lease accounting (depreciation on RoU assets). Bear probability 40%.*
 
 ---
 
-### 3. ABLBL (Rs 114) — ACCUMULATE ON DIPS
+### 4. ABLBL (Rs 116) — HOLD
 
 GREEN FLAGS:
-+ Heritage brands: Louis Philippe, Van Heusen, Allen Solly
-+ Path to debt-free in 2-3 years (Rs 781 Cr debt)
-+ Q3 FY26 EBITDA margin 20.6% (improving)
-+ Analysts target Rs 185-215 (+60-90% upside)
-+ 3 consecutive quarters positive LTL growth
++ Heritage brands: Louis Philippe, Van Heusen, Allen Solly, Peter England
++ 3,300 stores, 4.7M sq ft retail space
++ Q3 FY26 EBITDA margin improving
++ CFO Rs 1,144 Cr in FY25 (Screener.in)
++ Working capital days -16 (negative = efficient)
 
 RED FLAGS:
-- Newly listed (June 2025) — limited track record
-- P/B of 9.75x is expensive
+- P/B 10.8x — demanding valuation (Screener.in)
+- Newly listed (2025) — limited standalone track record
 - Revenue growth moderate 5-10%
-- Demerger supply overhang on stock
+- Expected value Rs 97 is BELOW CMP Rs 116
+- Brand-level revenue splits not publicly disclosed
 
-VERDICT: ACCUMULATE below Rs 105-110. Best of the ABFRL demerger. 1Y target Rs 140-170.
+VERDICT: HOLD. Expected value Rs 97 (~16% downside). *Assumption: EV < CMP, so verdict is HOLD per framework rules. Individual brand revenue splits are illustrative only — not disclosed by company. Forward P/E uses 30-85x range given newly listed status.*
 
 ---
 
-### 4. CELLO WORLD (Rs 507) — HOLD / CAUTIOUS BUY ON DIPS
+### 5. CELLO WORLD (Rs 505) — ACCUMULATE
 
 GREEN FLAGS:
-+ Nearly debt-free, 3Y ROE 35.7%
-+ Acquired Cello brand from BIC Group
-+ New glass plant ramping up
-+ 75% promoter holding
-+ Analyst consensus: Strong Buy, Rs 721
++ Nearly debt-free: Borrowings Rs 371 Cr (FY24) -> Rs 5 Cr (FY25) (Screener.in)
++ ROCE 23.7%, ROE 20.4% (Screener.in)
++ Glass plant operational, utilization 55-60% -> targeting 80%
++ 75% promoter holding (Screener.in)
++ CFO growing: Rs 187 (FY22) -> Rs 262 (FY25) Cr
 
 RED FLAGS:
-- Operating margins contracted 427 bps
-- Cash flow turned negative (standalone) FY25
-- Working capital days: 127 -> 184 days
-- Stock down 22% from IPO price
-- Revenue growth decelerating
+- FCF negative every year FY22-FY25 (capex for glass/steel plants)
+- Cash conversion cycle 245 days — elevated for consumer products
+- Operating margins contracted
+- Capex-heavy phase: Rs 553 Cr in FY25
 
-VERDICT: HOLD. Expected value Rs 500 (flat). Buy below Rs 450. Watch Q3 results.
+VERDICT: ACCUMULATE. Expected value Rs 617 (~22% upside). *Assumption: Negative FCF is cyclical, not structural. Management guides capex to normalize from Rs 553 Cr (FY25) to Rs 75 Cr maintenance (FY27). Normalized FCF ~Rs 187 Cr. Bear P/E uses 18-24x (commodity-company floor).*
 
 ---
 
-### 5. IDFC FIRST BANK (Rs 84) — NEUTRAL / HOLD
+### 6. IDFC FIRST BANK (Rs 85) — HOLD
 
 GREEN FLAGS:
-+ Rs 7,500 Cr Warburg/ADIA investment
++ Rs 7,500 Cr Warburg/ADIA investment at Rs 60/share floor
 + Asset quality improving: GNPA 1.69%
-+ NIM at 6% — highest among mid-size banks
-+ Deposit growth 22% CAGR
-+ Nomura: 67% EPS CAGR projected
++ NIM ~5.76% — highest among mid-size banks
++ Deposit growth ~10% HoH (Screener.in)
++ Q3 FY26 PAT Rs 479 Cr (improving trajectory)
 
 RED FLAGS:
-- Serial dilution: shares 360 Cr -> 860 Cr
-- ROA 0.41%, ROE 3.4% — far below benchmarks
-- Cost-to-Income 74% (industry worst tier)
-- P/E 48x vs bank sector median 11x
-- UBS downgrade to Sell (Rs 75 target)
+- Promoter holding 0.00% as of Dec 2025 (IDFC reverse merger, Screener.in)
+- ROE 4%, ROA ~0.4% — far below benchmarks
+- Shares diluted massively: ~860 Cr post-CCPS conversion (Oct 2025)
+- P/E 46.5x vs bank sector median ~11x
+- UBS: SELL, Target Rs 75 (November 2025)
+- Gordon Growth justified P/B is negative at current ROE
 
-VERDICT: HOLD. Expected value Rs 80 (slight downside). Better entry at Rs 70-75. Turnaround thesis is credible but not yet proven.
+VERDICT: HOLD. Expected value Rs 88 (~4% upside). *Assumption: Uses P/B valuation (banking). Shares ~860 Cr post-CCPS conversion (Warburg +81 Cr, ADIA +44 Cr shares, Oct 2025 — Screener.in equity capital of Rs 7,322 Cr is pre-conversion/stale). BV Rs 54.5/share. Expected return barely exceeds risk-free rate (~7%).*
 
 ---
 
 RANKING (1-Year Risk-Adjusted):
-1. ABLBL (Rs 114) — Best risk-reward, 60%+ upside to consensus
-2. CELLO (Rs 507) — Quality business, wait for dip
-3. IDFC FIRST (Rs 84) — Hold, turnaround in progress
-4. ABFRL (Rs 67) — High risk, high reward turnaround
-5. SULA (Rs 185) — Avoid, deteriorating fundamentals
+1. CELLO (Rs 505) — ACCUMULATE, 22% upside, quality business entering FCF inflection
+2. BIKAJI (Rs 660) — ACCUMULATE, 14.5% upside, strong brand + margin expansion
+3. SULA (Rs 185) — HOLD, high uncertainty despite optically high upside
+4. IDFC FIRST (Rs 85) — HOLD, turnaround in progress but minimal risk premium
+5. ABFRL (Rs 67) — SPECULATIVE HOLD, loss-making, high debt, path unclear
+6. ABLBL (Rs 116) — HOLD, EV below CMP, premium valuation for newly listed
 
-DISCLAIMER: Not financial advice. For educational purposes only. Consult a SEBI-registered advisor.
+**DISCLAIMER: Not financial advice. For educational purposes only. Consult a SEBI-registered advisor. All data sourced from Screener.in, BSE/NSE filings, Business Standard, and named brokerage reports. Price data as of late January 2026. Valuations use approximated forward EPS and probability-weighted P/E — see full PDF reports for methodology and limitations.**
