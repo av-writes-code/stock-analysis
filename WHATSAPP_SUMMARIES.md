@@ -20,7 +20,13 @@ RED FLAGS:
 - Competitive intensity from ITC, Haldiram's
 - Input cost inflation risk (edible oils, palm oil)
 
-VERDICT: ACCUMULATE. Expected value Rs 756 (~14.5% upside). *Assumption: Forward EPS uses base case 18% PAT growth, P/E 55-65x anchored to FMCG peer average.*
+ANALYST TARGETS:
+- Motilal Oswal: Buy, Rs 900
+- Emkay Global: Buy, Rs 950 (65x FY26E P/E)
+- Nuvama: Buy, Rs 985 (raised from 970)
+- Consensus (6 analysts): Rs 890-900, 6/6 Buy, 0 Hold/Sell
+
+VERDICT: ACCUMULATE. Expected value Rs 756 (~14.5% upside). *Assumption: Forward EPS uses base case 18% PAT growth, P/E 55-65x anchored to FMCG peer average. Our EV is conservative vs consensus (Rs 890-900) because we assign 25% bear probability.*
 
 ---
 
@@ -40,7 +46,21 @@ RED FLAGS:
 - Inventory days 877 — significant working capital stress
 - ROCE: 13.2% (Screener.in), declining
 
-VERDICT: HOLD. Expected value Rs 261 (~41% upside, but high uncertainty). *Assumption: Bear probability raised to 40% due to working capital deterioration. Bull case depends on wine market structural growth thesis.*
+EU-INDIA FTA UPDATE (Jan 27, 2026):
+- India-EU FTA SIGNED. Wine tariffs to drop from 150% -> 75% (Year 1), then to 20-30% over 7-10 years.
+- No concession on wines below EUR 2.5/bottle — protects ~90% of Indian wines under Rs 1,500.
+- Sula stock fell 4.1% on announcement day.
+- Sula's filing says "limited impact" and calls it "balanced" — company could also distribute EU wines.
+- BUT: Wine imports already grew 50%+ in H1 2025. Long-term competitive pressure is real.
+- Sources: Business Standard (Jan 28, 2026), BusinessToday, CNBC
+
+ANALYST TARGETS:
+- Consensus (5 analysts): Rs 265, Buy (3 Buy / 2 Hold)
+- TradingView (4 analysts): Rs 290, range Rs 268-330
+- CLSA target of Rs 819 is STALE (May 2024, pre-earnings decline) — likely revised down
+- Implied upside to consensus: ~43% — but cautious sentiment (only 3/5 Buy)
+
+VERDICT: HOLD. Expected value Rs 261 (~41% upside, but high uncertainty). *Assumption: Bear probability raised to 40% due to working capital deterioration + EU FTA competitive risk. Bull case depends on wine market structural growth thesis. CLSA Rs 819 target excluded as stale.*
 
 ---
 
@@ -59,7 +79,15 @@ RED FLAGS:
 - Pantaloons core growing only 6%
 - TTM revenue not directly comparable (pre vs post demerger)
 
-VERDICT: SPECULATIVE HOLD. Expected value around CMP. *Assumption: Uses EV/Sales (not P/E) since loss-making. CFO is positive due to lease accounting (depreciation on RoU assets). Bear probability 40%.*
+ANALYST TARGETS:
+- Motilal Oswal: Neutral, Rs 90
+- Nuvama: Hold (downgrade), Rs 84
+- Jefferies: Hold, Rs 100
+- Bernstein: Range Rs 80-105
+- Consensus (4 brokers): ~Rs 92, Neutral
+- Alpha Spread: Intrinsic value Rs 183 (61% undervalued) — Jan 2026
+
+VERDICT: SPECULATIVE HOLD. Expected value around CMP. *Assumption: Uses EV/Sales (not P/E) since loss-making. CFO is positive due to lease accounting (depreciation on RoU assets). Bear probability 40%. Most analysts are Neutral/Hold — not bearish, not bullish.*
 
 ---
 
@@ -79,7 +107,14 @@ RED FLAGS:
 - Expected value Rs 97 is BELOW CMP Rs 116
 - Brand-level revenue splits not publicly disclosed
 
-VERDICT: HOLD. Expected value Rs 97 (~16% downside). *Assumption: EV < CMP, so verdict is HOLD per framework rules. Individual brand revenue splits are illustrative only — not disclosed by company. Forward P/E uses 30-85x range given newly listed status.*
+ANALYST TARGETS:
+- HDFC Securities: Buy, Rs 180 (25x Sep-27 EV/EBITDA)
+- Morgan Stanley: Overweight, Rs 175
+- Motilal Oswal: Neutral, Rs 190
+- Bernstein: Market-Perform, Rs 170
+- Consensus (9 analysts): Buy, Rs 160-164, range Rs 138-180
+
+VERDICT: HOLD. Expected value Rs 97 (~16% downside). *Assumption: EV < CMP per our probability-weighted model, so verdict is HOLD despite analyst consensus of Rs 160-164. Our model assigns 30% bear probability at 30-40x P/E given newly listed premium risk. Analyst targets are significantly higher — investors should weigh both views.*
 
 ---
 
@@ -98,7 +133,13 @@ RED FLAGS:
 - Operating margins contracted
 - Capex-heavy phase: Rs 553 Cr in FY25
 
-VERDICT: ACCUMULATE. Expected value Rs 617 (~22% upside). *Assumption: Negative FCF is cyclical, not structural. Management guides capex to normalize from Rs 553 Cr (FY25) to Rs 75 Cr maintenance (FY27). Normalized FCF ~Rs 187 Cr. Bear P/E uses 18-24x (commodity-company floor).*
+ANALYST TARGETS:
+- Motilal Oswal: Buy, Rs 700 (Falna ramp-up catalyst)
+- PL Capital: Buy, Rs 678 (cut from Rs 746, margin pressure)
+- Consensus (6 analysts): Strong Buy, Rs 705-730 (6/6 Buy, 0 Hold/Sell)
+- TradingView (3 analysts): Rs 1,009 (older targets, range Rs 922-1,139)
+
+VERDICT: ACCUMULATE. Expected value Rs 617 (~22% upside). *Assumption: Negative FCF is cyclical, not structural. Management guides capex to normalize from Rs 553 Cr (FY25) to Rs 75 Cr maintenance (FY27). Normalized FCF ~Rs 187 Cr. Bear P/E uses 18-24x (commodity-company floor). All 6 covering analysts rate Buy.*
 
 ---
 
@@ -119,16 +160,24 @@ RED FLAGS:
 - UBS: SELL, Target Rs 75 (November 2025)
 - Gordon Growth justified P/B is negative at current ROE
 
-VERDICT: HOLD. Expected value Rs 88 (~4% upside). *Assumption: Uses P/B valuation (banking). Shares ~860 Cr post-CCPS conversion (Warburg +81 Cr, ADIA +44 Cr shares, Oct 2025 — Screener.in equity capital of Rs 7,322 Cr is pre-conversion/stale). BV Rs 54.5/share. Expected return barely exceeds risk-free rate (~7%).*
+ANALYST TARGETS:
+- Nomura: Buy, Rs 105 (67% EPS CAGR, ROA to 1.2% by FY28) — Jan 2026
+- Axis Securities: Buy, Rs 101 (raised from Rs 83) — Feb 2, 2026
+- Investec: Buy, Rs 90 (upgraded from Hold) — Jan 2026
+- UBS: SELL, Rs 75 (downgraded from Neutral) — Nov 2025
+- Nuvama: Hold, Rs 68 — Late 2025
+- Consensus (20 analysts): Rs 82, majority Buy, range Rs 53-100
+
+VERDICT: HOLD. Expected value Rs 88 (~4% upside). *Assumption: Uses P/B valuation (banking). Shares ~860 Cr post-CCPS conversion (Warburg +81 Cr, ADIA +44 Cr shares, Oct 2025). BV Rs 54.5/share. Expected return barely exceeds risk-free rate (~7%). Analysts are split — UBS Sell vs Nomura/Axis Buy. Turnaround thesis credible but not yet proven.*
 
 ---
 
 RANKING (1-Year Risk-Adjusted):
-1. CELLO (Rs 505) — ACCUMULATE, 22% upside, quality business entering FCF inflection
-2. BIKAJI (Rs 660) — ACCUMULATE, 14.5% upside, strong brand + margin expansion
-3. SULA (Rs 185) — HOLD, high uncertainty despite optically high upside
-4. IDFC FIRST (Rs 85) — HOLD, turnaround in progress but minimal risk premium
-5. ABFRL (Rs 67) — SPECULATIVE HOLD, loss-making, high debt, path unclear
-6. ABLBL (Rs 116) — HOLD, EV below CMP, premium valuation for newly listed
+1. CELLO (Rs 505) — ACCUMULATE, 22% upside, 6/6 analysts Buy, FCF inflection ahead
+2. BIKAJI (Rs 660) — ACCUMULATE, 14.5% upside, 6/6 analysts Buy Rs 890-900
+3. SULA (Rs 185) — HOLD, high uncertainty, EU FTA risk, only 3/5 analysts Buy
+4. IDFC FIRST (Rs 85) — HOLD, turnaround in progress, analysts split (UBS Sell vs Nomura Buy)
+5. ABFRL (Rs 67) — SPECULATIVE HOLD, loss-making, consensus Neutral Rs 92
+6. ABLBL (Rs 116) — HOLD, our EV Rs 97 < CMP, but analysts target Rs 160-164
 
 **DISCLAIMER: Not financial advice. For educational purposes only. Consult a SEBI-registered advisor. All data sourced from Screener.in, BSE/NSE filings, Business Standard, and named brokerage reports. Price data as of late January 2026. Valuations use approximated forward EPS and probability-weighted P/E — see full PDF reports for methodology and limitations.**
