@@ -387,7 +387,7 @@ def build_pdf(chart_paths):
 
     # Executive Summary Verdict Box
     verdict_data = [
-        ['VERDICT: ACCUMULATE | Expected Value: Rs ~570 (approx 13% upside)', '', ''],
+        ['VERDICT: ACCUMULATE | Expected Value: Rs 617 (approx 22% upside from CMP Rs 505)', '', ''],
         ['Key Bull: Nearly debt-free, ROCE 23.7%, capacity expansion in glass', '', ''],
         ['Key Bear: High working capital (245 days CCC), premium valuation at 33.6x P/E', '', ''],
     ]
@@ -608,9 +608,9 @@ def build_pdf(chart_paths):
     story.append(cf_table)
     story.append(Spacer(1, 0.2*cm))
     story.append(Paragraph(
-        '<b>FCF has been consistently negative</b> due to heavy capex period (glass plant). '
-        'CFO growing but FCF negative due to expansion. '
-        'Note: Heavy capex period (glass plant). Source: Screener.in (consolidated).',
+        '<b>FCF has been consistently negative</b> due to one-time glass plant capex (Falna, Rs ~200 Cr, now operational at 55-60% utilization). '
+        'Management guides capex to normalize from Rs 553 Cr (FY25) to Rs 75 Cr maintenance (FY27) — implying normalized FCF of ~Rs 187 Cr (CFO Rs 262 - Capex Rs 75). '
+        'Source: Screener.in, Business Standard (Nov 2025), Motilal Oswal (Oct 2025).',
         callout_red
     ))
 

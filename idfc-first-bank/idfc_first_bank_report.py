@@ -379,7 +379,7 @@ def build_pdf(chart_paths):
         ['Book Value/Share', 'Rs 54.5 (Screener.in, Dec 2025)', 'NIM (Q3 FY26)', '5.76%'],
         ['GNPA / NNPA', '1.69% / 0.53%', 'CASA Ratio', '51.64%'],
         ['ROA (FY25)', '0.43%', 'ROE', '4%'],
-        ['52-Week Range', 'Rs 57 - Rs 98', 'Shares Outstanding', '~732 Cr (Screener.in, Eq Cap Rs 7,322 Cr / FV Rs 10)'],
+        ['52-Week Range', 'Rs 57 - Rs 98', 'Shares Outstanding', '~860 Cr (post-CCPS conversion Oct 2025; Warburg +81 Cr, ADIA +44 Cr shares)'],
         ['Capital Adequacy', '16.22%', 'Promoter Holding', '0% (post-merger)'],
     ]
     metrics_table = Table(metrics_data, colWidths=[3.2*cm, 4*cm, 3.2*cm, 4*cm])
@@ -420,7 +420,7 @@ def build_pdf(chart_paths):
     # P/B note
     story.append(Paragraph(
         '<b>Book Value Note:</b> Screener.in reports Equity Capital of Rs 7,322 Cr at Face Value Rs 10, '
-        'implying ~732 Cr shares outstanding. BV/share = Rs 54.5 (Screener.in). '
+        '~860 Cr shares outstanding (post-CCPS conversion Oct 2025). BV/share = Rs 54.5 (Screener.in). '
         'P/B = CMP Rs 85.1 / BV Rs 54.5 = 1.56x. ROCE: 6.22%, ROE: 4% (Screener.in).',
         source_style
     ))
@@ -672,7 +672,7 @@ def build_pdf(chart_paths):
         ['Promoter', '0%', 'IDFC Holding merged into bank (Oct 2024)'],
         ['FII', '36.76%', 'Warburg Pincus (Currant Sea Investments) 9.97%; FIIs are key holders'],
         ['DII', '22.38%', 'Mutual funds + insurance/pension funds'],
-        ['Public / Retail', '33.05%', 'Widely held; ~732 Cr shares outstanding (Screener.in)'],
+        ['Public / Retail', '33.05%', 'Widely held; ~860 Cr shares outstanding (post-CCPS conversion Oct 2025)'],
         ['Government', '7.80%', 'Government holding'],
     ]
     sh_table = Table(sh_data, colWidths=[3*cm, 2.5*cm, 10*cm])
@@ -1008,7 +1008,7 @@ def build_pdf(chart_paths):
     bv_data = [
         ['Metric', 'Value', 'Source'],
         ['Net Worth (Q3 FY26)', 'Rs 55,346 Cr', 'Dec 2025 quarterly results'],
-        ['Equity Shares (Dec 2025)', '~732 Cr', 'Screener.in (Eq Cap Rs 7,322 Cr / FV Rs 10)'],
+        ['Equity Shares (Dec 2025)', '~860 Cr', 'Screener.in (Eq Cap Rs 7,322 Cr / FV Rs 10)'],
         ['Book Value / Share', 'Rs 54.5', 'Screener.in'],
         ['Current Price', 'Rs 85.1', 'NSE (Feb 4, 2026)'],
         ['Current P/B', '85.1 / 54.5 = 1.56x', 'Screener.in'],
@@ -1031,7 +1031,7 @@ def build_pdf(chart_paths):
     story.append(Spacer(1, 0.2*cm))
     story.append(Paragraph(
         '<b>P/B Updated:</b> BV/share = Rs 54.5 (Screener.in). P/B = CMP Rs 85.1 / BV Rs 54.5 = 1.56x. '
-        'Shares outstanding: ~732 Cr (Equity Capital Rs 7,322 Cr at FV Rs 10, per Screener.in). '
+        'Shares outstanding: ~860 Cr (post-CCPS conversion Oct 2025; Screener.in equity capital of Rs 7,322 Cr is stale/pre-conversion).'
         'This report uses 1.56x as the current P/B.',
         callout_green
     ))
