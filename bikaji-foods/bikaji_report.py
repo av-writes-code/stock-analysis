@@ -25,9 +25,8 @@ from reportlab.lib import colors
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-# Register Arial Unicode for ₹ symbol support
-ARIAL_UNICODE_PATH = '/Library/Fonts/Arial Unicode.ttf'
-pdfmetrics.registerFont(TTFont('ArialUnicode', ARIAL_UNICODE_PATH))
+# Register SFNS (San Francisco) for ₹ symbol support
+pdfmetrics.registerFont(TTFont('SFNS', '/System/Library/Fonts/SFNS.ttf'))
 
 # ─── Configuration ───
 OUTPUT_DIR = "/private/tmp/claude-501/-Users-arpitvyas-Desktop/5d9dbbf9-1c21-45f2-abcc-034b23508d8c/scratchpad"
@@ -252,33 +251,33 @@ def build_pdf(chart_paths):
         'CustomTitle', parent=styles['Title'],
         fontSize=20, textColor=HexColor(PRIMARY),
         spaceAfter=6, alignment=TA_CENTER,
-        fontName='ArialUnicode'
+        fontName='SFNS'
     )
     subtitle_style = ParagraphStyle(
         'CustomSubtitle', parent=styles['Normal'],
         fontSize=11, textColor=HexColor('#4a5568'),
         spaceAfter=12, alignment=TA_CENTER,
-        fontName='ArialUnicode'
+        fontName='SFNS'
     )
     heading_style = ParagraphStyle(
         'CustomHeading', parent=styles['Heading1'],
         fontSize=14, textColor=HexColor(PRIMARY),
         spaceBefore=16, spaceAfter=8,
-        fontName='ArialUnicode',
+        fontName='SFNS',
         borderWidth=0, borderPadding=0,
     )
     subheading_style = ParagraphStyle(
         'CustomSubheading', parent=styles['Heading2'],
         fontSize=11, textColor=HexColor(ACCENT),
         spaceBefore=10, spaceAfter=4,
-        fontName='ArialUnicode'
+        fontName='SFNS'
     )
     body_style = ParagraphStyle(
         'CustomBody', parent=styles['Normal'],
         fontSize=9, leading=13,
         textColor=HexColor('#2d3748'),
         spaceAfter=6, alignment=TA_JUSTIFY,
-        fontName='ArialUnicode'
+        fontName='SFNS'
     )
     bullet_style = ParagraphStyle(
         'CustomBullet', parent=body_style,
@@ -288,13 +287,13 @@ def build_pdf(chart_paths):
     source_style = ParagraphStyle(
         'SourceStyle', parent=styles['Normal'],
         fontSize=7, textColor=HexColor('#718096'),
-        spaceAfter=4, fontName='ArialUnicode'
+        spaceAfter=4, fontName='SFNS'
     )
     disclaimer_style = ParagraphStyle(
         'DisclaimerStyle', parent=styles['Normal'],
         fontSize=7, textColor=HexColor('#a0aec0'),
         spaceBefore=8, spaceAfter=4,
-        fontName='ArialUnicode', alignment=TA_CENTER
+        fontName='SFNS', alignment=TA_CENTER
     )
     callout_green = ParagraphStyle(
         'CalloutGreen', parent=body_style,
@@ -320,7 +319,7 @@ def build_pdf(chart_paths):
     story.append(Spacer(1, 0.5*cm))
     story.append(Paragraph('1-Year Stock Research Report', ParagraphStyle(
         'BigSub', parent=subtitle_style, fontSize=16, textColor=HexColor(ACCENT),
-        fontName='ArialUnicode'
+        fontName='SFNS'
     )))
     story.append(Paragraph('Outlook: February 2026 → February 2027', subtitle_style))
     story.append(Spacer(1, 1*cm))
@@ -328,18 +327,18 @@ def build_pdf(chart_paths):
     # Key metrics box
     metrics_data = [
         ['Current Price', '₹660 (Jan 29)', 'Market Cap', '₹16,539 Cr'],
-        ['P/E (Trailing)', '67–89x *', 'P/B Ratio', '11–12x'],
-        ['52-Week Range', '₹558.80 – ₹818.70', 'Dividend Yield', '0.14%'],
-        ['Revenue (TTM)', '₹2,887 Cr', 'Net Profit (TTM)', '₹238 Cr'],
-        ['Debt/Equity', '1%', 'Promoter Holding', '73.92%'],
+        ['P/E (Trailing)', '63.7x (Screener) *', 'P/B Ratio', '10.8x'],
+        ['52-Week Range', '₹558.80 – ₹818.70', 'Book Value', '₹61.4/share'],
+        ['Revenue (TTM)', '₹2,887 Cr', 'ROCE', '20.1%'],
+        ['Borrowings', '₹171 Cr', 'Promoter Holding', '73.92%'],
     ]
     metrics_table = Table(metrics_data, colWidths=[3.5*cm, 3.5*cm, 3.5*cm, 3.5*cm])
     metrics_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, -1), HexColor('#edf2f7')),
         ('TEXTCOLOR', (0, 0), (-1, -1), HexColor(PRIMARY)),
-        ('FONTNAME', (0, 0), (-1, -1), 'ArialUnicode'),
-        ('FONTNAME', (1, 0), (1, -1), 'ArialUnicode'),
-        ('FONTNAME', (3, 0), (3, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, -1), 'SFNS'),
+        ('FONTNAME', (1, 0), (1, -1), 'SFNS'),
+        ('FONTNAME', (3, 0), (3, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 9),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -351,8 +350,8 @@ def build_pdf(chart_paths):
     story.append(Spacer(1, 1*cm))
 
     story.append(Paragraph(
-        '* P/E varies by source: 5Paisa reports 67.1x, Tickertape reports 88.8x. Difference likely due to '
-        'trailing vs forward methodology and standalone vs consolidated earnings basis.',
+        '* P/E varies by source: Screener.in reports 63.7x (standalone), 5Paisa 67.1x, Tickertape 88.8x. '
+        'Differences due to standalone vs consolidated earnings and trailing period used. We use Screener.in as primary.',
         source_style
     ))
     story.append(Paragraph(
@@ -415,11 +414,44 @@ def build_pdf(chart_paths):
     story.append(HRFlowable(width="100%", thickness=1, color=HexColor(ACCENT)))
     story.append(Spacer(1, 0.3*cm))
 
+    story.append(Paragraph('Compounded Growth (Screener.in)', subheading_style))
+    growth_data = [
+        ['Metric', '10Y', '5Y', '3Y', 'TTM'],
+        ['Sales Growth', '18%', '19%', '17%', '7%'],
+        ['Profit Growth', '21%', '31%', '39%', '-6%'],
+        ['Stock Price CAGR', '—', '—', '21%', '-8%'],
+        ['ROE', '17%', '17%', '19%', '16%'],
+    ]
+    growth_table = Table(growth_data, colWidths=[3.5*cm, 2.5*cm, 2.5*cm, 2.5*cm, 2.5*cm])
+    growth_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
+        ('TEXTCOLOR', (0, 0), (-1, 0), white),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
+        ('FONTSIZE', (0, 0), (-1, -1), 8),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('GRID', (0, 0), (-1, -1), 0.5, HexColor('#cbd5e0')),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [white, HexColor('#f7fafc')]),
+        ('TOPPADDING', (0, 0), (-1, -1), 4),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+        ('TEXTCOLOR', (4, 1), (4, 1), HexColor(GREEN)),
+        ('TEXTCOLOR', (4, 2), (4, 2), HexColor(HIGHLIGHT)),
+    ]))
+    story.append(growth_table)
+    story.append(Spacer(1, 0.2*cm))
+    story.append(Paragraph(
+        '<b>Key Insight:</b> While 3Y and 5Y profit CAGR are impressive (39% and 31%), <b>TTM profit '
+        'growth has turned negative (-6%)</b> and TTM sales growth has decelerated to 7%. The high '
+        'historical growth rates are inflated by a low base (COVID/FY21). Investors should weight '
+        'recent deceleration more heavily than historical CAGRs.',
+        callout_red
+    ))
+
     story.append(Paragraph('Revenue & Profit Trend', subheading_style))
     story.append(Paragraph(
-        'Bikaji has delivered consistent revenue growth with a 5-year revenue CAGR of ~20%. '
-        'TTM revenue stands at ₹2,887 Cr with 13% annual growth. Q3 FY26 (Dec 2025) saw revenue '
-        'of ₹776 Cr (+11.5% YoY) and net profit of ₹62 Cr (+116% YoY), though profit dipped 20% '
+        'TTM revenue stands at ₹2,887 Cr. Q3 FY26 (Dec 2025) saw revenue '
+        'of ₹731 Cr and net profit of ₹65 Cr (Screener.in standalone), though profit dipped '
         'sequentially from Q2 FY26\'s ₹78 Cr due to seasonal effects.',
         body_style
     ))
@@ -449,34 +481,42 @@ def build_pdf(chart_paths):
 
     story.append(Paragraph('Balance Sheet & Cash Flow', subheading_style))
     story.append(Paragraph(
-        'Bikaji is virtually debt-free with a debt-to-equity ratio of just 1%. ROCE stands at 15% '
-        'and ROE at 14%. Current ratio is healthy at 2.60x.',
+        'Bikaji has borrowings of ₹171 Cr against equity + reserves of ₹1,430 Cr (Mar 2025). '
+        'ROCE stands at <b>20.1%</b> (Screener.in, Mar 2025) and ROE at 16%. Book value is ₹61.4/share. '
+        'P/B ratio of 10.8x. Current ratio is healthy at 2.60x.',
         body_style
     ))
     story.append(Paragraph(
-        '<b>Cash Flow Analysis (Critical):</b> Operating cash flow declined from ₹244 Cr (FY24) to '
-        '₹193 Cr (FY25) despite rising profits — a key concern. The decline was driven by working '
-        'capital build-up of ₹84 Cr (inventory + receivables). Capex was ~₹121 Cr, leaving free cash '
-        'flow at only ~₹72 Cr for FY25. However, management has indicated the intensive capex cycle '
+        '<b>Cash Flow Analysis:</b> Operating cash flow was ₹213 Cr in FY25 (Screener.in), down from '
+        '₹243 Cr in FY24 — a 12% decline despite rising revenue. Capex was ~₹121 Cr, leaving '
+        'free cash flow at ~₹92 Cr for FY25. Management has indicated the intensive capex cycle '
         '(~₹500 Cr cumulative) is now complete, and no major capex is planned for the next 2-2.5 years. '
         'This should meaningfully improve FCF from FY27 onwards.',
         body_style
     ))
+    story.append(Paragraph(
+        '<b>Working Capital Efficiency (Screener.in):</b> Debtor days actually <b>improved</b> from '
+        '18 days (FY24) to 14 days (FY25). Inventory days are stable at 18 days. This contradicts '
+        'the earlier concern about receivables growing faster than sales — on an annual basis, '
+        'working capital management appears sound. The CFO decline is likely driven by inventory '
+        'build-up for expansion rather than collection issues.',
+        body_style
+    ))
 
-    story.append(Paragraph('Shareholding Pattern (Sep 2025)', subheading_style))
+    story.append(Paragraph('Shareholding Pattern (Dec 2025 — Screener.in)', subheading_style))
     sh_data = [
         ['Category', 'Holding (%)', 'Details'],
         ['Promoters', '73.92%', 'Shiv Ratan Agarwal holds 34.22% (largest)'],
-        ['DII (Domestic Institutional)', '14.80%', 'MFs hold 9.45% via 23 schemes'],
-        ['FII (Foreign Institutional)', '6.30%', '83 FIIs invested'],
-        ['Public / Retail', '5.00%', 'Quant Small Cap Fund: 4.49% (largest public)'],
+        ['DII (Domestic Institutional)', '16.62%', 'MFs hold 9.45% via 23 schemes; DII up from 14.8%'],
+        ['FII (Foreign Institutional)', '4.92%', 'Down from 6.3% (Sep 2025) — FIIs reducing'],
+        ['Public / Retail', '4.54%', '1,19,954 shareholders'],
     ]
     sh_table = Table(sh_data, colWidths=[4*cm, 2.5*cm, 9*cm])
     sh_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 8),
         ('ALIGN', (0, 0), (1, -1), 'CENTER'),
         ('ALIGN', (2, 0), (2, -1), 'LEFT'),
@@ -489,20 +529,24 @@ def build_pdf(chart_paths):
     story.append(sh_table)
     story.append(Spacer(1, 0.3*cm))
     story.append(Paragraph(
-        '<b>Note:</b> Promoter holding declined from 74.98% (Dec 2024) to 73.92% (Sep 2025). '
-        'Dec 2025 quarter shareholding pattern was not yet published at the time of this report.',
+        '<b>Key Shift:</b> FIIs reduced from 6.3% to 4.92% between Sep and Dec 2025, while DIIs '
+        'increased from 14.8% to 16.62%. This suggests domestic institutions (likely MFs) are '
+        'accumulating on the dip, while foreign investors are booking profits. Promoter holding '
+        'is flat at 73.92%.',
         body_style
     ))
 
     story.append(Paragraph('Cautionary Flags', subheading_style))
     story.append(Paragraph(
         '<b>Investors should note the following concerns:</b><br/>'
-        '• <b>Cash flow deterioration:</b> Operating cash flow fell 21% (₹244→₹193 Cr) even as '
-        'profits grew. Working capital consumed ₹84 Cr. FCF was only ₹72 Cr vs ₹238 Cr net profit — '
-        'a cash conversion ratio of just 30%.<br/>'
+        '• <b>CFO decline:</b> Operating cash flow fell 12% (₹243→₹213 Cr, Screener.in) even as '
+        'revenue grew. FCF was ~₹92 Cr vs ₹238 Cr net profit — a cash conversion ratio of ~39%.<br/>'
         '• The company is depreciating a <b>lower percentage of assets</b>, which inflates reported net profit.<br/>'
-        '• <b>Receivables are growing faster than sales</b>, which may indicate aggressive revenue recognition.<br/>'
-        '• Retail investors have been net buyers, which can sometimes signal exuberance.',
+        '• <b>TTM profit growth is -6%</b> (Screener.in) despite strong quarterly YoY numbers — '
+        'the base effect is normalizing and investors should watch for deceleration.<br/>'
+        '• <b>FIIs reducing:</b> Foreign institutional holding dropped from 6.3% to 4.92% in Q3 FY26.<br/>'
+        '• <b>Correction (from earlier versions):</b> Debtor days actually improved (18→14 days, FY24→FY25). '
+        'The receivables concern flagged by some sources appears overstated on an annual basis.',
         callout_red
     ))
 
@@ -547,8 +591,8 @@ def build_pdf(chart_paths):
     tech_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 8),
         ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -606,9 +650,9 @@ def build_pdf(chart_paths):
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
         ('BACKGROUND', (0, 0), (0, -1), HexColor('#edf2f7')),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 0), (0, -1), 'ArialUnicode'),
-        ('FONTNAME', (1, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 0), (0, -1), 'SFNS'),
+        ('FONTNAME', (1, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 8),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -646,8 +690,8 @@ def build_pdf(chart_paths):
     pe_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 7.5),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -721,8 +765,8 @@ def build_pdf(chart_paths):
     analyst_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 9),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('GRID', (0, 0), (-1, -1), 0.5, HexColor('#cbd5e0')),
@@ -903,8 +947,8 @@ def build_pdf(chart_paths):
     eps_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), HexColor(PRIMARY)),
         ('TEXTCOLOR', (0, 0), (-1, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 8),
         ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -938,9 +982,9 @@ def build_pdf(chart_paths):
         ('BACKGROUND', (2, 0), (2, -1), HexColor('#fffff0')),
         ('BACKGROUND', (3, 0), (3, -1), HexColor('#fff5f5')),
         ('TEXTCOLOR', (1, 0), (3, 0), white),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 0), (0, -1), 'ArialUnicode'),
-        ('FONTNAME', (1, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 0), (0, -1), 'SFNS'),
+        ('FONTNAME', (1, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 7.5),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -975,9 +1019,9 @@ def build_pdf(chart_paths):
         ('BACKGROUND', (0, 1), (-1, 1), HexColor('#f0fff4')),
         ('BACKGROUND', (0, 2), (-1, 2), HexColor('#fffff0')),
         ('BACKGROUND', (0, 3), (-1, 3), HexColor('#fff5f5')),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (0, -1), 'ArialUnicode'),
-        ('FONTNAME', (1, 1), (-1, -1), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 1), (0, -1), 'SFNS'),
+        ('FONTNAME', (1, 1), (-1, -1), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 7.5),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -1025,10 +1069,10 @@ def build_pdf(chart_paths):
         ('BACKGROUND', (0, 2), (-1, 2), HexColor('#fffff0')),
         ('BACKGROUND', (0, 3), (-1, 3), HexColor('#fff5f5')),
         ('BACKGROUND', (0, 4), (-1, 4), HexColor('#edf2f7')),
-        ('FONTNAME', (0, 0), (-1, 0), 'ArialUnicode'),
-        ('FONTNAME', (0, 4), (-1, 4), 'ArialUnicode'),
-        ('FONTNAME', (0, 1), (0, 3), 'ArialUnicode'),
-        ('FONTNAME', (1, 1), (-1, 3), 'ArialUnicode'),
+        ('FONTNAME', (0, 0), (-1, 0), 'SFNS'),
+        ('FONTNAME', (0, 4), (-1, 4), 'SFNS'),
+        ('FONTNAME', (0, 1), (0, 3), 'SFNS'),
+        ('FONTNAME', (1, 1), (-1, 3), 'SFNS'),
         ('FONTSIZE', (0, 0), (-1, -1), 9),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -1119,10 +1163,11 @@ def build_pdf(chart_paths):
     ))
     story.append(Spacer(1, 0.3*cm))
     story.append(Paragraph(
-        '<b>Data Sources:</b> NSE India (nseindia.com) | Yahoo Finance (finance.yahoo.com) | '
-        'Business Standard (business-standard.com) | Screener.in | Trendlyne (trendlyne.com) | '
-        'Investing.com | TradingView (tradingview.com) | IMARC Group (imarcgroup.com) | '
-        'Alpha Spread (alphaspread.com) | Company Investor Presentations (bikaji.com)',
+        '<b>Data Sources:</b> Screener.in (primary financial data) | NSE India (nseindia.com) | '
+        'Yahoo Finance (finance.yahoo.com) | Business Standard (business-standard.com) | '
+        'Trendlyne (trendlyne.com) | Investing.com | TradingView (tradingview.com) | '
+        'IMARC Group (imarcgroup.com) | Motilal Oswal | Emkay Global | Nuvama | '
+        'Fastmarkets | MARC Ratings | Company Investor Presentations (bikaji.com)',
         source_style
     ))
 
